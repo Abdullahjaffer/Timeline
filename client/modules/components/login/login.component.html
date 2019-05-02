@@ -1,0 +1,30 @@
+<h1>
+  Log In
+</h1>
+
+<form #form="ngForm" (ngSubmit)="onSubmit(form.value)">  
+
+      <div class="form-group ">
+          <label for="Email">Email:</label>
+          <input required minlength="6" maxlength="30" ngModel name="Email" type="email" class="form-control" #Email='ngModel' pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+          <div class="alert alert-danger" *ngIf="Email.touched && !Email.valid">
+              <div *ngIf="Email.errors.required">Email is required.</div>
+              <div *ngIf="Email.errors.minlength">Minimum length is '6' Characters</div>
+              <div *ngIf="Email.errors.maxlength">Maximum length is '30' Characters</div>
+              <div *ngIf="Email.errors.pattern">Invalid Syntax</div>
+            </div>
+          </div> 
+
+
+          <div class="form-group ">
+              <label for="Password">Password:</label>
+              <input required minlength="6" maxlength="30" ngModel name="Password" type="password" class="form-control" #Password='ngModel'>
+              <div class="alert alert-danger" *ngIf="Password.touched && !Password.valid">
+                  <div *ngIf="Password.errors.required">Password is required.</div>
+                  <div *ngIf="Password.errors.minlength">Minimum length is '6' Characters</div>
+                  <div *ngIf="Password.errors.maxlength">Maximum length is '30' Characters</div>
+              </div>
+              </div> 
+
+              <button class="btn btn-primary" [disabled]="!Email.valid || !Password.valid">Submit</button>
+</form>

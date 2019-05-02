@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">TimeLine</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-lg-auto">
+            <li class="nav-item">
+              <a class="nav-link font-weight-normal" routerLink="/">TimeLine</a>
+            </li>
+          </ul>
+      <ul class="navbar-nav ml-lg-auto">
+          <li class="nav-item font-weight-normal" *ngIf = "name">
+              <a class="nav-link  text-dark" > 
+                {{name}}
+              </a>
+            </li>
+        <li class="nav-item bg-success rounded font-weight-normal" *ngIf = "!name">
+          <a class="nav-link  text-white" routerLink="/signup">Sign Up</a>
+        </li>
+        <li class="nav-item" *ngIf = "!name">
+            <a class="nav-link" routerLink="/login">Log In</a>
+          </li>
+          <li class="nav-item" *ngIf = "name">
+              <button class="btn" (click)="onLogOut()">Log Out</button>
+            </li>
+      </ul>
+
+    </div>
+  </nav>
