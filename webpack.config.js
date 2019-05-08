@@ -4,8 +4,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CompressionPlugin = require('compression-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var path = require('path');
-
-var uglifyOptions = require('uglifyjs-webpack-plugin')
+var UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 module.exports = {
   entry: {
     'polyfills': './client/polyfills.ts',
