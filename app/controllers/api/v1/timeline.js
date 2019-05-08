@@ -12,40 +12,41 @@ module.exports = function(router){
             userid : req.userData._id
         });
 
-        console.log(req.params.page)
+        // console.log(req.params.page)
 
-        if(req.params.page && !req.params.limit && req.params.page.length>23){
-                // console.log("req.params.page.length")
-                // console.log(req.params.page.length)
-                posts.findpost(req.params.page,(err,obj)=>{
-                    if(obj){
-                        res.send(obj)
-                    }else
-                    res.send(err)
-                })
-        }else{
-            req.params.limit = parseInt(req.params.limit);
-            req.params.page = parseInt(req.params.page)
+        // if(req.params.page && !req.params.limit && req.params.page.length>23){
+        //         // console.log("req.params.page.length")
+        //         // console.log(req.params.page.length)
+        //         posts.findpost(req.params.page,(err,obj)=>{
+        //             if(obj){
+        //             res.send(obj)
+        //             }else
+        //             res.send(err)
+        //         })
+        // }else{
         
             if(!req.params.limit){
                 req.params.limit = 5;
-                console.log('from reqparam!', req.params.limit)
+                // console.log('from reqparam!', req.params.limit)
             }
             if(!req.params.page){
                 req.params.page = 0;
             }
-        
+            req.params.limit = parseInt(req.params.limit);
+            req.params.page = parseInt(req.params.page)
+
             posts.findposts(req.params.page,req.params.limit,(err,obj)=>{
                 if(err){
                     res.status(200).send('false');
                 }else{
-                    console.log("back in Timeline controller:",obj)
-                    setInterval(()=>{
-                        res.send(obj)
-                    },5000)
+                    // console.log("back in Timeline controller:",obj)
+                    res.send(obj)
+                    // setInterval(()=>{
+                        
+                    // },5000)
                 }
             })
-        }
+        // }
     })
     
     

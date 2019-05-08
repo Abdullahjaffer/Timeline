@@ -19,9 +19,9 @@ private alert: AlertService,
 private timelinec : TimelineComponent    ) { }
 
   ngOnInit() {
-    console.log(this.post)
-    console.log(this.title)
-    console.log(this.postid)
+    // console.log(this.post)
+    // console.log(this.title)
+    // console.log(this.postid)
   }
 
   Edit(){

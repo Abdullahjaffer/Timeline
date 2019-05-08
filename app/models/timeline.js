@@ -24,7 +24,7 @@ var TimelineModel = function(){
         .limit(nPerPage)
         .populate('userid', 'name')
         .then(obj=>{
-                    console.log(obj)
+                    // console.log(obj)
                     return obj
                 }).catch(err=>{
                     console.log(err)
@@ -35,7 +35,7 @@ var TimelineModel = function(){
         this.model('Timeline')
         .find({ userid: this.userid, _id : x }, cb)
         .then((obj)=>{
-            console.log(obj)
+            // console.log(obj)
             return obj
         }).catch((err)=>{
             console.log("HERE IN ERROR",err)

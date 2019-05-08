@@ -38,7 +38,7 @@ export class AuthService {
 
   deleteToken(): void{
     localStorage.removeItem('token')
-    console.log("deleted")
+    // console.log("deleted")
     this.currentUserSubject.next(null)
   }
 
