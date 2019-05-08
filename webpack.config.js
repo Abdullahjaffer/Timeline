@@ -56,7 +56,14 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       template: 'client/index.html'
-    })
+    }),
+    new webpack.LoaderOptionsPlugin({
+      options : {
+          htmlLoader : {
+              minimize : false
+          }
+      }
+  })
   ],
 
   output: {
