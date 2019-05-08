@@ -15,8 +15,8 @@ module.exports = function(router){
         console.log(req.params.page)
 
         if(req.params.page && !req.params.limit && req.params.page.length>23){
-                console.log("req.params.page.length")
-                console.log(req.params.page.length)
+                // console.log("req.params.page.length")
+                // console.log(req.params.page.length)
                 posts.findpost(req.params.page,(err,obj)=>{
                     if(obj){
                         res.send(obj)
