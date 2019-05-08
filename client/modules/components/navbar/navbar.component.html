@@ -14,7 +14,7 @@
         <ul class="navbar-nav ml-lg-auto">
             <li class="nav-item">
               <a class="nav-link font-weight-normal" 
-              [routerLink]="['/']" 
+              routerLink='/'
               >
               TimeLine
             </a>
@@ -27,10 +27,10 @@
               </a>
           </li>
           <li class="nav-item bg-success rounded font-weight-normal" *ngIf = "!name">
-            <a class="nav-link  text-white" [routerLink]="['/signup']">Sign Up</a>
+            <a class="nav-link  text-white" routerLink="/signup">Sign Up</a>
           </li>
           <li class="nav-item" *ngIf = "!name">
-            <a class="nav-link" [routerLink]="['/login']">Log In</a>
+            <a class="nav-link" routerLink="/login">Log In</a>
           </li>
           <li class="nav-item" *ngIf = "name">
               <button class="btn" (click)="onLogOut()">Log Out</button>
