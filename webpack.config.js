@@ -4,8 +4,8 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CompressionPlugin = require('compression-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var path = require('path');
-var UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
+var uglifyOptions = require('uglifyjs-webpack-plugin')
 module.exports = {
   entry: {
     'polyfills': './client/polyfills.ts',
@@ -71,12 +71,14 @@ if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = false;
   module.exports.plugins = (module.exports.plugins || []).concat([
     new UglifyJsPlugin({
-      compress: {
-        warnings: false,
-        pure_funcs: ['console.log', 'window.console.log.apply']
-      },
-      mangle: false
-    }),
+      uglifyOptions: {
+      warnings: false,
+      ie8: false,
+      output: {
+      comments: false
+      }
+      }
+      }),
     new webpack.optimize.AggressiveMergingPlugin(),
     new CompressionPlugin({
       asset: "[path].gz[query]",
