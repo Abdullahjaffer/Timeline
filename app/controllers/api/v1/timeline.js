@@ -40,7 +40,9 @@ module.exports = function(router){
                     res.status(200).send('false');
                 }else{
                     console.log("back in Timeline controller:",obj)
-                    res.send(obj)
+                    setInterval(()=>{
+                        res.send(obj)
+                    },5000)
                 }
             })
         }

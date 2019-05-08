@@ -38,10 +38,12 @@ ngOnInit() {
   }
 
   onScroll(){
+    this.flag = false
     this.pagenumber +=1
     console.log(this.pagenumber)
     this.timelineService.fetchPosts(this.pagenumber).subscribe(
       res=>{
+        console.log("in response")
         if(Object.keys(res).length === 0)
         this.flag = true
         this.posts = this.posts.concat(res)
