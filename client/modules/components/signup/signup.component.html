@@ -22,7 +22,7 @@
                                     type="text" 
                                     class="form-control" 
                                     #Name='ngModel'
-                                    pattern="/^[a-zA-Z0-9 ]+$/"
+                                    pattern="^[a-zA-Z]+([a-zA-Z]*)*$"
                                     >
                                     <div class="alert alert-danger" *ngIf="Name.touched && !Name.valid">
                                         <div *ngIf="Name.errors.required">Name is required.</div>
