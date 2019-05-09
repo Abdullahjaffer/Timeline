@@ -55,27 +55,27 @@ export class AuthService {
         cb(this.tokenParser(res))
       },
       err=>{
-        this.alert.error("Error fetching Data")
+        this.alert.error(err)
         cb(false)
       }
     )
   }
   signup(user:any,cb:any){
-    let req =
+
     this.http.post(`${this.url}/users/signup`,user)
     .subscribe(
       res =>{
         cb(this.tokenParser(res))
       },
       err=>{
-        this.alert.error("Error fetching Data")
+        this.alert.error(err)
         cb(false)
       }
     )
   }
   tokenParser(payload:any){
     console.log(payload)
-    if(payload.token){
+    if(payload.token ){
       this.storeToken(payload)
       this.currentUserSubject.next(payload);
       this.alert.success("Logged In")
@@ -100,7 +100,7 @@ export class AuthService {
         cb(res)
       },
       err=>{
-        this.alert.error("Error fetching Data")
+        this.alert.error(err)
         cb(false)
       }
     )
