@@ -7,6 +7,8 @@ var http = require('http');
 
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
+
+
 var mongoString = require('./config/mongo.json').url;
 
 var mongoLogger = function(coll, method, query, doc) {

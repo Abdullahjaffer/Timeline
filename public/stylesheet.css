@@ -224,6 +224,8 @@
     left: 0%; }
   .left {
     left: 0%; } }
+.no-margin {
+  margin: 0; }
 #parent {
   position: fixed;
   top: 0;
@@ -243,5 +245,3 @@
 @media only screen and (max-width: 768px) {
   #child {
     width: 80%; } }
-.no-margin {
-  margin: 0; }
