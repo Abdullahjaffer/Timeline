@@ -1,3 +1,4 @@
 {
-  "url": "mongodb://localhost:27017/anglec"
+  "url": "mongodb+srv://admin:<123456789abc>@cluster0-d2nwo.gcp.mongodb.net/test?retryWrites=true"
+  
 }
