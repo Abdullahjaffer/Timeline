@@ -6,7 +6,7 @@ import {AlertService} from '../services/alert.service'
   providedIn: 'root'
 })
 export class TimelineService {
-  url:string = "https://timelineappp.herokuapp.com/api/v1"
+  url:string = "/api/v1"
   constructor( private http : HttpClient, private alert: AlertService) { }
 
   fetchPosts(x:number){

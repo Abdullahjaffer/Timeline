@@ -10,7 +10,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  url:string = "https://timelineappp.herokuapp.com/api/v1"  
+  url:string = "/api/v1"  
 
   private currentUserSubject: BehaviorSubject<any>;
   public currentUser: Observable<any>;
