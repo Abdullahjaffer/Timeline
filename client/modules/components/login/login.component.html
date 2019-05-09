@@ -28,10 +28,10 @@
       
                 <div class="form-group ">
                     <label for="Password">Password:</label>
-                    <input required minlength="6" maxlength="30" ngModel name="Password" type="password" class="form-control" #Password='ngModel'>
+                    <input required minlength="8" maxlength="30" ngModel name="Password" type="password" class="form-control" #Password='ngModel'>
                     <div class="alert alert-danger" *ngIf="Password.touched && !Password.valid">
                         <div *ngIf="Password.errors.required">Password is required.</div>
-                        <div *ngIf="Password.errors.minlength">Minimum length is '6' Characters</div>
+                        <div *ngIf="Password.errors.minlength">Minimum length is '8' Characters</div>
                         <div *ngIf="Password.errors.maxlength">Maximum length is '30' Characters</div>
                     </div>
                     </div> 
