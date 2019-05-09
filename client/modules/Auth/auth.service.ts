@@ -56,6 +56,7 @@ export class AuthService {
       },
       err=>{
         this.alert.error(err)
+        console.log(err)
         cb(false)
       }
     )
@@ -69,6 +70,7 @@ export class AuthService {
       },
       err=>{
         this.alert.error(err)
+        console.log(err)
         cb(false)
       }
     )
@@ -101,6 +103,7 @@ export class AuthService {
       },
       err=>{
         this.alert.error(err)
+        console.log(err)
         cb(false)
       }
     )
